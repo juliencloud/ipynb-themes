@@ -1,0 +1,790 @@
+/*
+    Name:       Neka
+    Author:     Julien Cloud
+*/
+
+
+body {
+    /*background-color: #080D12;*/
+    background-color: rgb(8, 13, 18);
+    font-family: 'Roboto Mono', 'Helvetica', sans-serif;
+    font-size: 10pt;
+    line-height: 1.42857;
+    color: rgb(204, 230, 255);
+}
+
+a {
+    color: rgb(204, 230, 255);
+    font-family: 'Roboto Mono', 'Helvetica', sans-serif;
+}
+
+div#menubar-container {
+    border-bottom: 1px solid rgb(83, 105, 128);
+}
+
+div#notebook, div.CodeMirror, div.output_area pre, div.output_wrapper, div.prompt, div.CodeMirror pre {
+    font-family: 'Roboto Mono', monospace;
+    font-size: 10pt;
+}
+
+/* Hiding the ipython log */
+div#ipython_notebook {
+    display: none;
+}
+
+/* INTRO PAGE */
+.toolbar_info {
+    color: rgb(204, 230, 255);
+    font-size: 10pt;
+    border: 0;
+    font-family: 'Roboto Mono', sans-serif;
+    text-shadow: none !important;
+}
+
+.list_container {
+    color: rgb(83, 105, 128);
+    background-color: rgb(8, 13, 18);
+    font-size: 10pt;
+    border: 0;
+    font-family: 'Roboto Mono', sans-serif;
+    text-shadow: none !important;
+}
+
+.list_container > div {
+    border-bottom: 1px solid rgba(83, 105, 128, 0.2);
+    font-size: 10pt;
+}
+
+.breadcrumb>li {
+    text-shadow:0 0px 0; 
+    color: rgb(204, 230, 255);
+    font-family: 'Roboto Mono', sans-serif;
+    font-size: 10pt
+}
+
+.list_container a {
+    color: rgb(83, 105, 128);
+    font-family: 'Roboto Mono', sans-serif; 
+    font-size: 10pt; 
+    border: 0; 
+    text-shadow: none !important; 
+}
+
+.list_container a:hover {
+    color: rgb(204, 230, 255);
+}
+
+.list_item:hover {
+    background-color: transparent !important;
+}
+
+.item_icon {
+    color: rgb(83, 105, 128);
+}
+
+.list_header {
+    font-weight: normal;
+    background-color: rgb(8, 13, 18);
+}
+
+div.notebook_list_header {
+    background: rgb(8, 13, 18);
+}
+
+.panel-default {
+    border-color: rgba(83, 105, 128, 0.5);
+}
+
+.panel {
+    line-height: 22px;
+    fontsize: 12px;
+    margin-bottom: 18px;
+    background-color: rgb(8, 13, 18);
+    color: #8997b0;
+    border: 2px solid rgba(83, 105, 128, 0.5);
+    box-shadow: none;
+}
+
+.dropdown-menu {
+    border: 1px solid rgba(83, 105, 128, 0.5);
+    background-color: rgb(8, 13, 18);
+    background: rgb(8, 13, 18);
+    box-shadow: none;
+    padding-top: 0px;
+    padding-bottom: 0px;
+    list-style: outside none none;
+    font-size: 9pt;
+    text-align: left;
+}
+
+.dropdown-menu:hover,
+.dropdown-menu:active {
+    background-color: rgb(8, 13, 18);
+    border: 1px solid rgba(83, 105, 128, 0.5);
+    color: rgb(255, 170, 51);
+    box-shadow: none;
+    padding-top: 0px;
+    padding-bottom: 0px;
+}
+
+.modal-content {
+    position: relative;
+    background-color: rgb(8, 13, 18);
+    border: 1px solid rgba(83, 105, 128, 0.15);
+    border-radius: 3px;
+    box-shadow: 0px 3px 9px rgba(83, 105, 128, 0.25);
+    background-clip: padding-box;
+    outline: 0px none;
+}
+
+.dropdown-header {
+    display: block;
+    padding: 3px 20px;
+    font-size: 10pt;
+    line-height: 1.42857;
+    color: rgb(83, 105, 128);
+    text-decoration: underline;
+    text-decoration-color: rgba(83, 105, 128, 0.95);
+    white-space: nowrap;
+}
+
+.dropdown-menu > li > a {
+    border: 1px solid rgb(8, 13, 18);
+    display: block;
+    padding: none;
+    clear: both;
+    background-clip: padding-box;
+    font-weight: normal;
+    line-height: 1.42857;
+    color: rgb(83, 105, 128);
+    white-space: nowrap;
+    background-color: rgb(8, 13, 18);
+    background: rgb(8, 13, 18);
+}
+
+.dropdown-menu > li > a:hover,
+.dropdown-menu > li > a:focus {
+    background-clip: padding-box;
+    background-color: rgb(8, 13, 18);
+    border: 1px solid rgb(8, 13, 18);
+    color: rgb(255, 170, 51);
+    padding: none;
+    background: rgb(8, 13, 18);
+}
+
+li.open > a {
+    color: #c2e0ff !important;
+    background-color: rgb(8, 13, 18) !important;
+}
+
+.dropdown-menu .divider {
+    height: 1px;
+    margin: 4px 0px;
+    overflow: hidden;
+    background-color: rgba(83, 105, 128, 0.5);
+}
+
+.dropdown-menu > .disabled > a,
+.dropdown-menu > .disabled > a:hover,
+.dropdown-menu > .disabled > a:focus {
+    color: #5A647B; /* TODO */
+}
+
+.modal-header {
+    padding: 15px;
+    border-bottom: 1px solid rgba(83, 105, 128, 0.95);
+    min-height: 16.4286px;
+}
+
+#running .panel-group .panel .panel-heading {
+    background-color: rgb(8, 13, 18);
+    padding: 4px 7px;
+    line-height: 22px;
+}
+
+#running .panel-group .panel .panel-heading a:hover {
+    color: rgb(255, 170, 51);
+}
+
+#running .panel-group .panel .panel-body .list_container .list_item {
+    border-bottom: 1px solid rgba(83, 105, 128, 0.55);
+}
+
+.running-indicator {
+    color: rgb(255, 170, 51) !important;
+}
+
+.running_notebook_icon:before {
+    color: rgb(255, 170, 51) !important;
+}
+
+#project_name > .breadcrumb {
+    font-weight: normal;
+    color: rgb(255, 170, 51);
+}
+
+#kernel_indicator {
+    float: right !important;
+    color: rgb(255, 170, 51);
+}
+
+#kernel_indicator .kernel_indicator_name {
+    padding-left: 5px;
+    padding-right: 5px;
+    font-size: 9pt;
+}
+
+#modal_indicator {
+    float: right !important;
+    color: rgb(255, 170, 51);
+}
+
+.notebook_app {
+    background-color: rgb(8, 13, 18);
+}
+.notebook_app #header {
+    box-shadow: none !important;
+    background-color: rgb(8, 13, 18);
+}
+
+#notebook-container {
+    padding: 15px;
+    background-color: rgb(8, 13, 18);
+    min-height: 0px;
+    box-shadow: none;
+}
+
+#header {
+    box-shadow: none;
+    background-color: rgb(8, 13, 18);
+    position: relative;
+    z-index: 100;
+}
+
+#header-container {
+    padding-bottom: 0px !important;
+    padding-top: 0px !important;
+    /*display: none !important;*/
+    box-shadow: none;
+}
+
+div.header-bar {
+    display: none !important;
+}
+
+#header .header-bar {
+    background: rgb(8, 13, 18);
+}
+
+#kernel_logo_widget {
+    display: none;
+}
+
+span.filename, span.save_widget {
+    font-size: 9pt !important;
+}
+
+span.filename:hover, span.filename:focus {
+    background-color: rgba(53, 108, 180, .1) !important;
+}
+
+span.checkpoint_status, span.autosave_status {
+    color: rgb(83, 105, 128);
+    font-size: 8pt !important;
+}
+
+/* text in output area (i.e. print some_list) */
+div.output_html {
+    color: #cce6ff;
+}
+
+/* Formatting code in text, code*/
+.rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
+  border: 1px #cce6ff solid;
+  color: #cce6ff;
+  /*background-color: #303845 !important;*/
+  align-content: left !important;
+}
+
+.rendered_html pre, .rendered_html code {
+    color: #cce6ff;
+    line-height: 100%;
+}
+
+.navbar-default {
+    background-color: rgb(8, 13, 18);
+    border-color: rgb(8, 13, 18);
+}
+
+#menubar .navbar {
+    border-top: 1px;
+    border-radius: 0 0 2px 2px;
+    margin-bottom: 0;
+    margin-top: 4px;
+}
+
+.nav-tabs > li.active > a,
+.nav-tabs > li.active > a:hover,
+.nav-tabs > li.active > a:focus {
+    background-color: rgb(204, 230, 255) !important;
+}
+
+#maintoolbar {
+    border-top: 0px;
+    padding: 5px;
+}
+
+#cell_type {
+    height: 24px;
+}
+
+.navbar-default .navbar-nav > li > a {
+    color: rgb(83, 105, 128);
+    font-size: 9pt;
+}
+
+.navbar-default .navbar-nav > li > a:hover, .navbar-default .navbar-nav > li > a:focus {
+    color: rgb(255, 170, 51);
+    /*background-color: rgba(53, 108, 180, .5);*/
+}
+
+.navbar-default .navbar-nav > .open > a, .navbar-default .navbar-nav > .open > a:hover, .navbar-default .navbar-nav > .open > a:focus {
+    color: rgb(204, 230, 255);
+    /*background-color: rgba(53, 108, 180, .5);*/
+}
+
+.btn {
+    color: rgb(83, 105, 128);
+    background: rgb(8, 13, 18);
+    font-size: 9pt;
+    font-weight: normal;
+    border: 0 none !important;
+    box-shadow: none !important;
+    text-shadow: none;
+    vertical-align: 0px;
+}
+
+.btn-group > .btn-mini {
+    color: rgb(83, 105, 128);
+    background: rgb(8, 13, 18);
+    font-size: 9pt;
+    font-weight: normal;
+    border: 0 none !important;
+    box-shadow: none !important;
+    text-shadow: none;
+}
+
+.btn:hover, .btn:active, .btn:focus {
+    color: rgb(255, 170, 51) !important;
+    background-color: rgb(8, 13, 18) !important;
+    background-image: none;
+}
+
+.btn-group > .btn-mini:hover {
+    color: rgb(255, 170, 51);
+    background: rgb(8, 13, 18);
+    background-color: rgb(8, 13, 18);
+    background-image: none;
+}
+
+.btn-group, .btn-group-vertical {
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.ipython_tooltip {
+    border: 2px solid rgb(255, 170, 51);
+    box-shadow: none;
+    border-radius: 2px;
+    position: absolute;
+    z-index: 1000;
+    background-color: rgb(8, 13, 18);
+}
+
+.ipython_tooltip .tooltiptext pre {
+    border: 0px none;
+    border-radius: 0px;
+    background-color: rgb(8, 13, 18);
+    color: #DEDEDE;
+}
+
+/* Formatting code in markdown cells */
+div.text_cell_render {
+    font-family: 'Helvetica', sans-serif;
+    background: rgb(8, 13, 18);
+    font-weight: 310;
+    color: #DEDEDE;
+}
+
+/* Formatting code in markdown cells */
+div.text_cell_render pre {
+    color: #DEDEDE;
+    background-color: rgb(8, 13, 18);
+}
+
+div.text_cell_render code {
+    padding-left: 3px;
+    padding-right: 3px;
+    color: #DEDEDE;
+    background-color: rgba(53, 108, 180, .5);
+}
+
+div.text_cell {
+    max-width: 100%;
+    color: #DEDEDE;
+}
+
+div.text_cell_render h1,
+div.text_cell_render h2,
+div.text_cell_render h3,
+div.text_cell_render h4,
+div.text_cell_render h5,
+div.text_cell_render h6 {
+    font-family: 'Helvetica', sans-serif;
+    background: rgb(8, 13, 18);
+    font-weight: 600;
+    color: #DEDEDE;
+    line-height: 120%;
+}
+
+/* text in output area (i.e. print some_list) */
+div.output_html {
+    color: #cce6ff;
+}
+
+/* Formatting code in text, code*/
+.rendered_html table, .rendered_html th, .rendered_html tr, .rendered_html td {
+  border: 1px #cce6ff solid;
+  color: #cce6ff;
+  background-color: rgb(8, 13, 18) !important;
+  align-content: left !important;
+}
+
+button.close {
+    padding: 0px;
+    cursor: pointer;
+    background: transparent none repeat scroll 0% 0%;
+    border: 0px none;
+}
+
+.close {
+    float: right;
+    font-size: 22px;
+    font-weight: bold;
+    line-height: 1;
+    color: #3572C6;
+    opacity: 0.3;
+}
+
+.close:hover {
+    color: #0095ff;
+    opacity: 0.9;
+}
+
+.form-control {
+    display: block;
+    width: 100%;
+    height: 32px;
+    padding: 6px 12px;
+    font-size: 10pt;
+    line-height: 1.6;
+    color: #DEDEDE;
+    background-color: rgba(53, 108, 180, .1);
+    background-image: none;
+    border: 1px solid rgba(83, 105, 128, 0.95);
+}
+
+.modal-footer {
+    padding: 15px;
+    text-align: right;
+    border-top: 1px solid rgba(83, 105, 128, 0.95);
+}
+
+.input-form-control:hover:active {
+      background-color:  rgba(83, 105, 128, 0.95);
+      selected:  rgba(83, 105, 128, 0.95);
+}
+
+
+span.ansiblack {color: #2b303b;}
+span.ansiblue {color: #3cadd7;} /* done */
+span.ansigray {color: #B4B7B4;}
+span.ansigreen {color: #BCCC52;} /* done */
+span.ansipurple {color: #9f3a2c;} /* done */
+span.ansicyan {color: #3cadd7;} /* done */
+span.ansiyellow {color: #ffe792;} /* done */
+span.ansired {color: #d7503c;} /* done */
+
+
+div.output_stderr {
+    background-color: rgba(215, 80, 60, .5);
+}
+div.output_stderr pre {
+    color: #cce6ff;
+}
+
+.cm-s-ipython.CodeMirror {
+    /*background: rgb(8, 13, 18);*/
+    color: #DEDEDE; /* done */
+    font-size: 10pt !important;
+}
+
+.cm-s-ipython div.CodeMirror-selected {
+    background: rgba(122, 163, 204, 0.2) !important;
+}
+
+.cm-s-ipython .CodeMirror-gutters {
+    background: rgb(8, 13, 18); 
+    border: 0px; 
+    border-radius:0px;
+}
+.cm-s-ipython .CodeMirror-linenumber {
+    color: #212A33 !important;  /* done */
+    font-size: 10pt;
+}
+.cm-s-ipython .CodeMirror-cursor {
+    border-left: 2px solid #ffe792 !important; /* done */
+}
+.cm-s-ipython span.cm-comment {
+    color: #515c68; /* done */
+    font-style: normal !important; /* done */
+}
+.cm-s-ipython span.cm-atom {
+    color: #ffe792; /* done */
+}
+.cm-s-ipython span.cm-number {
+    color: #ffe792; /* done */
+}
+.cm-s-ipython span.cm-property {
+    color: #77ABE7;
+}
+.cm-s-ipython span.cm-attribute {
+    color: #E39194;
+}
+.cm-s-ipython span.cm-keyword {
+    color: #d7503c; /* done */
+    font-weight: bold;
+}
+.cm-s-ipython span.cm-string {
+    color: #BCCC52; /* done */
+    font-weight: normal;
+}
+.cm-s-ipython span.cm-operator {
+    color: #d7503c; /* done */
+    font-weight: normal;
+}
+.cm-s-ipython span.cm-builtin {
+    color: #ffe792; /* done */
+    font-weight: normal;
+}
+.cm-s-ipython span.cm-boolean {
+    color: #ffe792; /* done */
+}
+.cm-s-ipython span.cm-variable {
+    color: #DEDEDE; /* done */
+}
+.cm-s-ipython span.cm-variable-2 {
+    color: #E6992E; /* done */
+    font-weight: bold;
+}
+
+.cm-s-ipython span.cm-def {
+    color: #77ABE7; /* done */
+    font-weight: normal;
+}
+.cm-s-ipython span.cm-error {
+    background: rgba(191, 97, 106, .3) !important;
+}
+.cm-s-ipython span.cm-tag {
+    color: #CAA6EC;
+}
+.cm-s-ipython span.cm-link {
+    color: #E39194;
+}
+.cm-s-ipython span.cm-storage {
+    color: #ffffff; /* done */
+}
+.cm-s-ipython span.cm-entity {
+    color: #3cadd7; /* done */
+}
+.cm-s-ipython span.cm-class {
+    color: #E7C547; /* done */
+}
+.cm-s-ipython span.cm-support {
+    color: #ffe792; /* done */
+}
+.cm-s-ipython span.cm-qualifier {
+    color: #77ABE7;
+}
+
+div.CodeMirror pre {
+    font-size: 10pt !important;
+}
+
+div.CodeMirror span.CodeMirror-matchingbracket { 
+    color: #DEDEDE; 
+    background: rgba(53, 108, 180, .75) !important ; 
+}
+
+div.CodeMirror span.CodeMirror-nonmatchingbracket { 
+    color: #DEDEDE; 
+    background: rgba(191, 97, 106, .3) !important ; 
+}
+
+.cm-s-ipython .CodeMirror-matchingbracket { 
+    color: #DEDEDE; 
+    background: rgba(53, 108, 180, .75)  !important; 
+}
+
+.cm-s-ipython .CodeMirror-nonmatchingbracket { 
+    color: #DEDEDE; 
+    background: rgba(191, 97, 106, .3) !important; 
+}
+
+div.cell { 
+    margin-top: 10px;
+    /*border: 1px solid #DEDEDE;*/
+    padding: 0px; 
+    border-radius: 0px;
+    background: transparent;
+}
+
+div.cell.selected { 
+    border: 1px solid rgba(53, 108, 180, .2); 
+    padding: 0px; 
+    border-radius: 0px;
+    background: transparent;
+}
+
+.edit_mode div.cell.selected {
+    border: 1px solid rgb(255, 170, 51) !important;
+    padding: 0px; 
+    border-radius: 0px;
+    background: transparent;
+}
+
+div.cell.edit_mode {
+    border: 1px solid rgb(255, 170, 51) !important;
+    padding: 0px; 
+    border-radius: 0px;
+    background: transparent;
+}
+
+div.prompt {
+    padding: 0.3em;
+    margin: 0px;
+    font-family: monospace;
+    text-align: left;
+    line-height: 1.21429em;
+    min-width: 11ex;
+    font-size: 9pt;
+}
+
+div.input_area {
+    background-color: rgba(53, 108, 180, .1);
+    margin-bottom: 0px;
+    border: 0px;
+    border-radius: 0px;
+}
+
+.text_cell.unrendered {
+    /*background-color: #FFFFFF;*/
+    color: #DEDEDE !important;
+}
+
+.cm-header {
+    color: #DEDEDE !important;
+}
+
+.cm-link {
+    color: #c2e0ff !important;
+}
+
+/*Input and output cells formatting*/
+div.prompt.input_prompt {
+    font-family: 'Roboto Mono', monospace;
+    /*border-right: 2px solid rgba(53, 108, 180, .4);*/
+    font-weight: bold;
+    font-size: 9pt;
+    color: rgba(53, 108, 180, .5);
+    background-color: rgb(8, 13, 18);
+    width: 1em;
+    padding-bottom: 0px;
+    margin-bottom: 0px;
+}
+
+div.prompt.output_prompt {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    background-color: rgb(8, 13, 18);
+    color: rgb(8, 13, 18);
+    font-size: 9pt;
+    width: 1em;
+    margin-bottom: 8px;
+    padding-top: 1em;
+    padding-bottom: 1em;
+}
+
+div.out_prompt_overlay.prompt {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    font-size: 9pt;
+    width: 1em;
+    margin-bottom: 8px;
+    background-color: rgb(8, 13, 18);
+    border-radius: 4px;
+    -webkit-border-radius: 4px;
+    -moz-border-radius: 4px;
+}
+
+div.out_prompt_overlay.prompt:hover {
+    font-family: 'Roboto Mono', monospace;
+    font-weight: bold;
+    font-size: 9pt;
+    width: 1em;
+    border-radius: 4px;
+    margin-bottom: 8px;
+    background-color: rgba(53, 108, 180, .3);
+}
+
+div.output_wrapper {
+    background-color: rgb(8, 13, 18);
+    margin-bottom: 0em;
+    margin-top: 0em;
+    border: 0px;
+}
+
+div.output_subarea.output_text.output_stream.output_stdout,
+div.output_subarea.output_text {
+    padding-top: 1em;
+    margin-bottom: 8px;
+    margin-top: 8px;
+    margin-left: 11px;
+    margin-right: 8px;
+    border-left: 3px solid rgba(53, 108, 180, .1);
+    color: #cce6ff;
+}
+
+div.output_area pre {
+    color: #cce6ff;
+    font-size: 10pt;
+}
+
+div.output_subarea {
+    overflow-x: auto;
+    padding: 1.0em;
+    -webkit-box-flex: 1;
+    -moz-box-flex: 1;
+    box-flex: 1;
+    flex: 1;
+    max-width: calc(100% - 14ex);
+    /*background-color: rgba(53, 108, 180, .1);*/
+}
+
+div.output_png > img {
+    background-color: #fff;
+}
+
+
+@import url('theme.css');
